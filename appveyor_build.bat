@@ -2,7 +2,7 @@
 
 SETLOCAL 
 
-SET project=src/Tuckfirtle.Miner.Builder.csproj
+SET project=src/Tuckfirtle.Miner.csproj
 SET configuration=Release
 
 SET framework_core=netcoreapp3.0
