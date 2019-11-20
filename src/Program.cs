@@ -42,7 +42,7 @@ namespace Tuckfirtle.Miner
 
                     var message = consoleMessages.WriteLine("Press Enter/Return to exit...").Build();
 
-                    if (message.Length > 1)
+                    if (message.Count > 1)
                     {
                         consoleLogger.LogMessage(message);
                         Console.ReadLine();
