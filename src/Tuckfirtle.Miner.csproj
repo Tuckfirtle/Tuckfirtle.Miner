@@ -16,6 +16,8 @@
     <PackageProjectUrl>https://github.com/tuckfirtle/Tuckfirtle.Miner</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tuckfirtle/Tuckfirtle.Miner</RepositoryUrl>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
