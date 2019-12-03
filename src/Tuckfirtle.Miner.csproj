@@ -3,10 +3,8 @@
   <PropertyGroup>
     <AssemblyName>Tuckfirtle.Miner</AssemblyName>
     <RootNamespace>Tuckfirtle.Miner</RootNamespace>
-    <TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <StartupObject>Tuckfirtle.Miner.Program</StartupObject>
-    <ApplicationIcon></ApplicationIcon>
     <PackageId>Tuckfirtle.Miner</PackageId>
     <Version>0.0.1.0</Version>
     <Authors>Yong Jian Ming</Authors>
@@ -16,41 +14,23 @@
     <PackageProjectUrl>https://github.com/tuckfirtle/Tuckfirtle.Miner</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tuckfirtle/Tuckfirtle.Miner</RepositoryUrl>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PublishTrimmed>true</PublishTrimmed>
+    <Configurations>Debug_linux;Release_linux;Debug_osx;Release_osx;Debug_win;Release_win</Configurations>
+    <Platforms>arm;x64;x86</Platforms>
+    <RuntimeIdentifiers>linux-arm;linux-musl-x64;linux-x64;osx-x64;win-arm;win-arm64;win-x64;win-x86</RuntimeIdentifiers>
+    <RuntimeIdentifier>$(Configuration.Replace("Debug_","").Replace("Release_", ""))-$(Platform)</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug_linux' OR '$(Configuration)'=='Debug_osx' OR '$(Configuration)'=='Debug_win'">
     <DefineConstants>DEBUG</DefineConstants>
     <Optimize>false</Optimize>
     <DebugType>embedded</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+  <PropertyGroup Condition="'$(Configuration)'=='Release_linux' OR '$(Configuration)'=='Release_osx' OR '$(Configuration)'=='Release_win'">
     <Optimize>true</Optimize>
     <DebugType>none</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_linux|arm' OR '$(Configuration)|$(Platform)'=='Release_linux|arm'">
-    <RuntimeIdentifier>linux-arm</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_linux|x64' OR '$(Configuration)|$(Platform)'=='Release_linux|x64'">
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_osx|x64' OR '$(Configuration)|$(Platform)'=='Release_osx|x64'">
-    <RuntimeIdentifier>osx-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_win|x64' OR '$(Configuration)|$(Platform)'=='Release_win|x64'">
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_win|x86' OR '$(Configuration)|$(Platform)'=='Release_win|x86'">
-    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
