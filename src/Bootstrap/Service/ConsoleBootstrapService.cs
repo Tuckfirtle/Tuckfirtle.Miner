@@ -5,7 +5,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.Versioning;
-using TheDialgaTeam.Core.DependencyInjection.Service;
+using TheDialgaTeam.Core.DependencyInjection;
 using TheDialgaTeam.Core.Logger;
 using Tuckfirtle.Miner.Config.Model;
 
@@ -23,7 +23,7 @@ namespace Tuckfirtle.Miner.Bootstrap.Service
             Config = config;
         }
 
-        public void Execute()
+        public void ExecuteService(ITaskAwaiter taskAwaiter)
         {
             var config = Config;
 

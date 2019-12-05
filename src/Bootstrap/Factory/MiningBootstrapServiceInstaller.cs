@@ -4,16 +4,15 @@
 
 using Microsoft.Extensions.DependencyInjection;
 using TheDialgaTeam.Core.DependencyInjection;
-using TheDialgaTeam.Core.DependencyInjection.Factory;
 using Tuckfirtle.Miner.Bootstrap.Service;
 
 namespace Tuckfirtle.Miner.Bootstrap.Factory
 {
-    internal sealed class BootstrapFactoryInstaller : IFactoryInstaller
+    internal sealed class MiningBootstrapServiceInstaller : IServiceInstaller
     {
-        public void Install(IServiceCollection serviceCollection)
+        public void InstallService(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddInterfacesAsSingleton<BootstrapService>();
+            serviceCollection.AddInterfacesAsSingleton<MiningBootstrapService>();
         }
     }
 }

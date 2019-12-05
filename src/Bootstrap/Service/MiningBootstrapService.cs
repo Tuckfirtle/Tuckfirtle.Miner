@@ -3,7 +3,7 @@
 // Please see the included LICENSE file for more information.
 
 using System;
-using TheDialgaTeam.Core.DependencyInjection.Service;
+using TheDialgaTeam.Core.DependencyInjection;
 using TheDialgaTeam.Core.Logger;
 using Tuckfirtle.Core.Pow;
 using Tuckfirtle.Core.Utility;
@@ -24,7 +24,7 @@ namespace Tuckfirtle.Miner.Bootstrap.Service
             Config = config;
         }
 
-        public void Execute()
+        public void ExecuteService(ITaskAwaiter taskAwaiter)
         {
             var config = Config;
 

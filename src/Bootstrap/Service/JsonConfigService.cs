@@ -4,7 +4,7 @@
 
 using System;
 using System.Threading;
-using TheDialgaTeam.Core.DependencyInjection.Service;
+using TheDialgaTeam.Core.DependencyInjection;
 using TheDialgaTeam.Core.Logger;
 using Tuckfirtle.Miner.Config;
 
@@ -25,7 +25,7 @@ namespace Tuckfirtle.Miner.Bootstrap.Service
             CancellationTokenSource = cancellationTokenSource;
         }
 
-        public void Execute()
+        public void ExecuteService(ITaskAwaiter taskAwaiter)
         {
             var jsonConfig = JsonConfig;
 
