@@ -12,7 +12,7 @@ namespace Tuckfirtle.Miner.Bootstrap.Factory
     {
         public void InstallService(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddInterfacesAsSingleton<BootstrapService>();
+            serviceCollection.AddInterfacesAndSelfAsSingleton<BootstrapService>();
         }
     }
 }

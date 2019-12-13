@@ -21,7 +21,7 @@ namespace Tuckfirtle.Miner.Bootstrap.Factory
         public void InstallService(IServiceCollection serviceCollection)
         {
             serviceCollection.AddInterfacesAndSelfAsSingleton(new JsonConfig(ConfigFilePath));
-            serviceCollection.AddInterfacesAsSingleton<JsonConfigService>();
+            serviceCollection.AddInterfacesAndSelfAsSingleton<JsonConfigService>();
         }
     }
 }
